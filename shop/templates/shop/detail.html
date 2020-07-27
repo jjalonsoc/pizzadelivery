@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+<br />
+{% block content %}
+<h1 class="text-center pt-5">Pizza {{ detailproduct.name }}</h1>
+<div class="text-center">
+    <img src="{{ detailproduct.image.url }}" height=200 width="200" />
+</div>
+<br />
+<b>Ingredients:</b> {{ detailproduct.description }}
+<br />
+<br />
+<b>To come:</b> In the near future, you will have the possibility to order all our pizzas fully gluten-free, for our beloved Celiac patients.
+<hr />
+{% endblock %}
