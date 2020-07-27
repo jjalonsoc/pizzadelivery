@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+<br />
+{% block content %}
+
+<main role="main">
+
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1>Hi, this is your new pizza delivery service: InnosPizza</h1>
+        <p class="lead text-muted">We are the solution to bring the old italian kitchen, with quality ingredients, directly to your home.</p>
+      </div>
+    </section>
+  
+    <div class="album py-5 bg-light">
+      <div class="container">
+  
+        <div class="row">
+          {% for product in products.all %}
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <img class="card-img-top" src="{{ product.image.url }}"  height=160 />
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                  <p class="card-text">{{ product.name }}</p>
+                  <p class="text-muted">{{ product.price }} EUR</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  
+  </main>
+
+{% endblock %}
