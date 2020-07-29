@@ -4,8 +4,12 @@ from .models import Product
 
 def home(request):
     products = Product.objects
-    return render(request, 'shop/home.html', {'products':products})
+    template = 'shop/home.html'
+    context = {'products':products}
+    return render(request, template, context)
 
-def detail(request, blog_id):
-    detailproduct = get_object_or_404(Product, pk=blog_id)
-    return render(request, 'shop/detail.html', {'detailproduct': detailproduct})
+def detail(request, slug):
+    detailproduct = get_object_or_404(Product, slug=slug)
+    template = 'shop/detail.html'
+    context = {'detailproduct': detailproduct}
+    return render(request, template, context)

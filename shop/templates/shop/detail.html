@@ -2,9 +2,17 @@
 
 <br />
 {% block content %}
-<h1 class="text-center pt-5">Pizza {{ detailproduct.name }}</h1>
+    <h1 class="text-center pt-5">
+        Pizza {{ detailproduct.name }}
+    </h1>
 <div class="text-center">
     <img src="{{ detailproduct.image.url }}" height=200 width="200" />
+</div>
+<div class="text-center">
+    <form class='form' method="GET" action='{% url "update_cart" detailproduct.slug %}'>
+        <input class='' name='qty' type='number' value="1" />
+        <input class='' type='submit' value ='Add to cart' />
+    </form>
 </div>
 <br />
 <b>Ingredients:</b> {{ detailproduct.description }}
